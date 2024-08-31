@@ -54,7 +54,9 @@ const CollectionInfo: React.FC<{
           alt="nft image"
           className={`shadow-xl drop-shadow-lg rounded-xl`}
         />
-        <div className={`absolute bottom-1 right-2 bold p-4 text-yellow-200`}>
+        <div
+          className={`absolute bottom-1 right-2 bold p-4 text-yellow-200 drop-shadow-[0_1px_1px_#000]`}
+        >
           {nftImage}
         </div>
       </div>
