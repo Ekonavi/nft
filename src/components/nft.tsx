@@ -11,7 +11,7 @@ import NftMDX from "./nft.mdx";
 import { useEffect } from "react";
 const NFT: React.FC = () => {
   useEffect(() => {
-    window.history.pushState({}, "", "/cohort1");
+    window.history.pushState({}, "", "/oficina1");
   }, []);
   return (
     <Card
