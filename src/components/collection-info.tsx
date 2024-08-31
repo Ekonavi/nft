@@ -7,9 +7,26 @@ const CollectionInfo: React.FC<{
   nftImage: string;
   production: string;
   supply: number;
-}> = ({ name, description, coverImage, nftImage, production, supply }) => {
-  const classNameColLeft = "text-sm font-bold bg-white/10 px-4 py-4";
-  const classNameColRight = "text-sm px-4 py-4";
+  contractAddress: string;
+  openSeaLink: string;
+}> = ({
+  name,
+  description,
+  coverImage,
+  nftImage,
+  production,
+  supply,
+  contractAddress,
+}) => {
+  if (!contractAddress) return null;
+
+  const classNameColLeft =
+    "text-sm font-bold bg-white/10 px-4 py-4 overflow-hidden";
+  const classNameColRight = "text-sm px-4 py-4 overflow-hidden";
+
+  const explorerContractLink = `https://arbiscan.io/address/${contractAddress}`;
+  const marketplaceLink = `https://opensea.io/assets/arbitrum/${contractAddress}/1`;
+
   return (
     <div className="grid grid-cols-[20%,1fr] border bg-[#345d4b] overflow-hidden rounded-2xl !text-white mb-12 shadow-xl drop-shadow-lg">
       <div className={classNameColLeft}>Name</div>
@@ -43,6 +60,28 @@ const CollectionInfo: React.FC<{
       </div>
       <div className={classNameColLeft}>Supply</div>
       <div className={classNameColRight}>{supply}</div>
+      <div className={classNameColLeft}>Arbitrum Contract</div>
+      <div className={classNameColRight}>
+        <a
+          href={explorerContractLink}
+          target="_blank"
+          rel="noreferrer"
+          className={`underline`}
+        >
+          {explorerContractLink}
+        </a>
+      </div>
+      <div className={classNameColLeft}>Marketplace Link</div>
+      <div className={classNameColRight}>
+        <a
+          href={marketplaceLink}
+          target="_blank"
+          rel="noreferrer"
+          className={`underline`}
+        >
+          {marketplaceLink}
+        </a>
+      </div>
     </div>
   );
 };
