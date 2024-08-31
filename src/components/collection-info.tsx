@@ -21,8 +21,9 @@ const CollectionInfo: React.FC<{
   if (!contractAddress) return null;
 
   const classNameColLeft =
-    "text-sm font-bold bg-white/10 px-4 py-4 overflow-hidden";
-  const classNameColRight = "text-sm px-4 py-4 overflow-hidden";
+    "text-sm font-bold bg-white/10 px-4 py-4 overflow-hidden overflow-ellipsis";
+  const classNameColRight =
+    "text-sm px-4 py-4 overflow-hidden overflow-ellipsis whitespace-nowrap w-full";
 
   const explorerContractLink = `https://arbiscan.io/address/${contractAddress}`;
   const marketplaceLink = `https://opensea.io/assets/arbitrum/${contractAddress}/1`;

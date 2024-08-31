@@ -60,7 +60,7 @@ const NFT: React.FC = () => {
         &copy; {new Date().getFullYear()} Ekonavi, Inc.{" "}
         <a
           className={`underline pl-1`}
-          href="https://ekonavi.com/?utm_source=arbitrum-airdrop"
+          href="https://ekonavi.com/?utm_source=arbitrum-nft"
           target="_blank"
         >
           Ekonavi.com
