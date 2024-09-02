@@ -5,18 +5,31 @@ const FloatImage: React.FC<{
   alt: string;
   src: string;
   children: React.ReactNode;
-}> = ({ float, alt, src, children }) => {
+  className?: string;
+
+  classNameImg?: string;
+  classNameText?: string;
+}> = ({
+  float,
+  alt,
+  src,
+  children,
+  className,
+  classNameImg,
+  classNameText,
+}) => {
   return (
-    <div className="">
+    <div className={className}>
       <img
         src={src}
         alt={alt}
         className={cn(
-          "pb-4",
-          float === "left" ? "float-left pr-4" : "float-right pl-4",
+          "mb-4 ",
+          float === "left" ? "float-left mr-4" : "float-right ml-4",
+          classNameImg,
         )}
       />
-      <p>{children}</p>
+      <p className={cn("", classNameText)}>{children}</p>
     </div>
   );
 };
