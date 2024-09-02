@@ -9,6 +9,7 @@ const CollectionInfo: React.FC<{
   supply: number;
   contractAddress: string;
   openSeaLink: string;
+  profileLink: string;
 }> = ({
   name,
   description,
@@ -17,6 +18,7 @@ const CollectionInfo: React.FC<{
   production,
   supply,
   contractAddress,
+  profileLink,
 }) => {
   if (!contractAddress) return null;
 
@@ -83,6 +85,17 @@ const CollectionInfo: React.FC<{
           className={`underline`}
         >
           {marketplaceLink}
+        </a>
+      </div>
+      <div className={classNameColLeft}>Profile Link</div>
+      <div className={classNameColRight}>
+        <a
+          href={profileLink}
+          target="_blank"
+          rel="noreferrer"
+          className={`underline`}
+        >
+          {profileLink}
         </a>
       </div>
     </div>
