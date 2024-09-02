@@ -24,8 +24,8 @@ const CollectionInfo: React.FC<{
 
   const classNameColLeft =
     "text-sm font-bold bg-white/10 px-4 py-4 overflow-hidden overflow-ellipsis";
-  const classNameColRight =
-    "text-sm px-4 py-4 overflow-hidden overflow-ellipsis whitespace-nowrap w-full";
+  const classNameColRight = "text-sm px-4 py-4 w-full";
+  const classNameOverflowEllipsis = "overflow-hidden overflow-ellipsis";
 
   const explorerContractLink = `https://arbiscan.io/address/${contractAddress}`;
   const marketplaceLink = `https://opensea.io/assets/arbitrum/${contractAddress}/1`;
@@ -66,7 +66,7 @@ const CollectionInfo: React.FC<{
       <div className={classNameColLeft}>Supply</div>
       <div className={classNameColRight}>{supply}</div>
       <div className={classNameColLeft}>Arbitrum Contract</div>
-      <div className={classNameColRight}>
+      <div className={cn(classNameColRight, classNameOverflowEllipsis)}>
         <a
           href={explorerContractLink}
           target="_blank"
@@ -77,7 +77,7 @@ const CollectionInfo: React.FC<{
         </a>
       </div>
       <div className={classNameColLeft}>Marketplace Link</div>
-      <div className={classNameColRight}>
+      <div className={cn(classNameColRight, classNameOverflowEllipsis)}>
         <a
           href={marketplaceLink}
           target="_blank"
@@ -88,7 +88,7 @@ const CollectionInfo: React.FC<{
         </a>
       </div>
       <div className={classNameColLeft}>Profile Link</div>
-      <div className={classNameColRight}>
+      <div className={cn(classNameColRight, classNameOverflowEllipsis)}>
         <a
           href={profileLink}
           target="_blank"
